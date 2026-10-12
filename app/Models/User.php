@@ -40,8 +40,9 @@ class User extends Authenticatable
     }
 
     //method to get all companies associated with a specific user (table 'company_user')
+    //timestamps() method is used to automatically manage the created_at and updated_at timestamps in the pivot table
     public function companies(): BelongsToMany
     {
-        return $this->belongsToMany(Company::class);
+        return $this->belongsToMany(Company::class)->withTimestamps();
     }
 }

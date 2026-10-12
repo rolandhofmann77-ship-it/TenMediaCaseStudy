@@ -9,6 +9,18 @@ class Job extends Model
 {
     protected $table = 'job_listings'; //specific table name because of Laravel queue table 'jobs'
 
+    //defining the fillable attributes for mass assignment
+    protected $fillable = [
+        'company_id',
+        'user_id',
+        'title',
+        'description',
+        'location',
+        'employment_type',
+        'salary',
+        'currency',
+    ];
+
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);

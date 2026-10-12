@@ -1,4 +1,4 @@
-job_listing_Service
+job_listing_service
 
 1.Project Goal
 Building an application to manage job listings using Laravel and PHP, with main focus on the backend and REST API.
@@ -12,6 +12,7 @@ Building an application to manage job listings using Laravel and PHP, with main 
 -A company has many jobs (1:n).
 -A company has many users (n:m).
 -A user can belong to many companies (m:n).
+    ->table company_user
 -A job belongs to one company (n:1).
 
 4.APIs
