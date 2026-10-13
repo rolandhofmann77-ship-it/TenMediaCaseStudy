@@ -75,6 +75,17 @@ class JobController extends Controller
             'currency' => ['sometimes', 'nullable', 'string', 'size:3'],
         ]);
 
+        //check if user is associated with the company_id being updated (if company_id is being updated)    
+        if (isset($validated['company_id'])) {
+            //check authenticated user for authorization
+            $user = $request->user();
+
+            if (!$user->companies()->where('companies.id', $validated['company_id'])->exists()) {
+                abort(403, 'You are not authorized to use this company.');
+            }
+        }
+
+
         $job->update($validated);
 
         return response()->json($job->load(['company', 'creator']));
