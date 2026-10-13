@@ -17,3 +17,10 @@ Route::get('jobs/{id}', [JobController::class, 'show']);
 //route to create a new job listing for the authenticated user
 //authentication required for this route
 Route::post('jobs', [JobController::class, 'store'])->middleware('auth:sanctum');
+//route to update an existing job listing for the authenticated user(creator)
+//authentication required for this route
+//ToDo: patch method instead of put method?
+Route::put('jobs/{id}', [JobController::class, 'update'])->middleware('auth:sanctum');
+//route to destroy an existing job listing for the authenticated user(creator)
+//authentication required for this route
+Route::delete('jobs/{id}', [JobController::class, 'destroy'])->middleware('auth:sanctum');
