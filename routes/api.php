@@ -14,3 +14,6 @@ Route::get('jobs', [JobController::class, 'index']);
 //route to get a SPECIFIC job with its associated company and creator (user) information
 //no authentication required for this route
 Route::get('jobs/{id}', [JobController::class, 'show']);
+//route to create a new job listing for the authenticated user
+//authentication required for this route
+Route::post('jobs', [JobController::class, 'store'])->middleware('auth:sanctum');
