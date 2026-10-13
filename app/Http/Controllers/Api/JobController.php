@@ -15,4 +15,12 @@ class JobController extends Controller
 
         return response()->json($jobs);
     }
+
+    //show a single job with its associated company and creator (user) information
+    public function show(int $id): JsonResponse
+    {
+        $job = Job::with(['company', 'creator'])->findOrFail($id);
+
+        return response()->json($job);
+    }
 }

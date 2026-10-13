@@ -8,6 +8,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-//route to get all jobs with their associated company and creator (user) information
+//route to get ALL jobs with their associated company and creator (user) information
 //no authentication required for this route
 Route::get('jobs', [JobController::class, 'index']);
+//route to get a SPECIFIC job with its associated company and creator (user) information
+//no authentication required for this route
+Route::get('jobs/{id}', [JobController::class, 'show']);
