@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany; //Cardinality (1:n)
 use Illuminate\Database\Eloquent\Relations\BelongsToMany; //Cardinality (m:n)
 
 class Company extends Model
 {
+    use HasFactory;
     //defining the fillable attributes for mass assignment
     protected $fillable = [
         'name',
