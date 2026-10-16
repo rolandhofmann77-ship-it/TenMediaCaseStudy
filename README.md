@@ -16,7 +16,14 @@ Building an application to manage job listings using Laravel and PHP, with main 
 -A job belongs to one company (n:1).
 
 4.APIs
-Implementing RESTful endpoints for CREATE, LIST and UPDATE purposes. Supporting required models and extending APIs where appropriate.
+Implementing RESTful CRUD endpoints for jobs and companies:
+-CREATE (POST) 
+-LIST (GET collection)
+-SHOW (GET single resource)
+-UPDATE (PUT)
+-DELETE (DELETE)
+
+An authenticated-user endpoint returns the currently authenticated user.
 
 5.Security/Validation
 -Everyone can view job listings.
